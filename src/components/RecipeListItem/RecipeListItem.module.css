@@ -1,0 +1,43 @@
+.Recipe {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 200px;
+    background-color: rgba(256, 256, 256, .6);
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+    text-align: center;
+    transition: all .3s;
+    text-decoration: none;
+    margin: 10px;
+    border-radius: 25px;
+}
+
+.Recipe:hover {
+    background-color: rgba(256, 256, 256, .9);
+    transform: translateY(-2px);
+    cursor: pointer;
+}
+
+.Img  {
+    width: 65%;
+    height: 65%;
+    border-radius: 100%;
+    transition: all .3s; }
+
+.Name {
+    font-size: 15px;
+    color: #2E4057;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 0;
+}
+.Author {
+    font-size: 13px;
+    color: #048BA8;
+    font-style: italic;
+    text-transform: uppercase;
+    font-weight: 600;
+margin: 5px 0 0 0;
+}

@@ -1,0 +1,124 @@
+input:focus, button:focus {
+    outline-width: 0;
+}
+
+.Form {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.Search {
+    width: 300px;
+    height: 48px;
+    border-radius: 100px 0 0 100px;
+    border-color: rgba(0,0,0,.1);
+    background-color: rgba(256,256,256, .9);
+    padding-left: 25px;
+    margin-right: -100px;
+}
+.Search::placeholder {
+    font-style: italic;
+}
+
+.BtnLeft, .BtnLeft:link, .BtnLeft:visited {
+    text-align: center;
+    vertical-align: center;
+    border-radius: 5px 0 0 5px;
+    border: none;
+    cursor: pointer;
+    color: #eee;
+    background-color: #048BA8;
+    padding: 18px 15px;
+}
+
+.BtnLeft:hover {
+    background-color: #2E4057;
+    color: white;
+}
+
+.BtnRight {
+    position: relative;
+    text-align: center;
+    vertical-align: center;
+    border-radius: 0 5px 5px 0;
+    border: none;
+    cursor: pointer;
+    background-color: #F6AE2D;
+    padding: 18px 15px;
+    color: #eee;
+}
+
+.BtnRight:hover {
+    background-color: #ED6415;
+    color: white;
+}
+
+.BtnRight [type=file] {
+    cursor: inherit;
+    width: 100%;
+    height: 100%;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    text-align: right;
+    top: 5px;
+}
+
+@media (max-width: 767px) {
+    .Search {
+        width: 200px;
+        height: 38px;
+        margin-right: -60px;
+    }
+    .Search::placeholder {
+        font-size: 10px;
+    }
+    .BtnLeft, .BtnRight {
+        padding: 14px 10px;
+    }
+    .BtnRight span,
+    .BtnLeft span {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 550px) {
+    .Search {
+        width: 100px;
+        height: 28px;
+        margin-right: -20px;
+    }
+    .Search::placeholder {
+        font-size: 10px;
+    }
+    .BtnLeft, .BtnRight {
+        padding: 10px 5px;
+    }
+    .BtnRight span,
+    .BtnLeft span {
+        font-size: 8px;
+    }
+}
+
+@media (max-width: 369px) {
+    .Search {
+        max-width: 20px;
+        height: 16px;
+        margin-right: -10px;
+        padding: 0 15px;
+        border-color: rgba(0,0,0,0);
+        border-bottom: 1px solid rgba(256,256,256, 0.5);
+        background-color: rgba(256,256,256, 0);
+    }
+    .Search::placeholder {
+        font-size: 5px;
+    }
+    .BtnLeft, .BtnRight {
+        padding: 0 2px 2px 2px;
+    }
+    .BtnRight span,
+    .BtnLeft span {
+        font-size: 6px;
+    }
+}
