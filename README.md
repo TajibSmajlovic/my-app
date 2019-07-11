@@ -13,7 +13,7 @@ This app was created with *React*, *Redux* and *Firebase*. App uses *https://www
 - Selected recipe is rendered to screen with brief pieces of information (*minutes to make, ingredients*)
 - By clicking *Visit* button user will be redirected to  a **webpage** of the recipe which contains all details and instructions on how to make a selected recipe.
 
-####User can: 
+#### User can: 
 1. **If not authenticated**, download selected recipe in *JSON* and upload it for later use
 2. **If authenticated**, *favourite* selected recipe
 
