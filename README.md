@@ -1,6 +1,6 @@
 This app was created with *React*, *Redux* and *Firebase*. App uses *https://www.food2fork.com* API for fetching recipes.
 
-## Live Demo ()
+## Live Demo (https://myapp-543f6.firebaseapp.com/)
 
 ## Instructions to run the app locally:
 - clone the repository
