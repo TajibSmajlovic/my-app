@@ -1,9 +1,9 @@
 import {
-  FAVOURITE_ERROR,
   FAVOURITE_FINISH,
   FAVOURITE_START,
   FAVOURITE_SUCCESSFUL
 } from "../actions/actionTypes";
+import { ERROR_HANDLER } from "../actions/actionTypes";
 import { updateObject } from "../../shared/utility";
 
 const initialState = {
@@ -24,6 +24,9 @@ const favouritesStart = (state, action) =>
 const favourieSuccessful = (state, action) =>
   updateObject(state, { loading: false });
 
+const errorHandler = (state, action) =>
+  updateObject(state, { error: null, loading: false });
+
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case FAVOURITE_START:
@@ -32,6 +35,8 @@ const reducer = (state = initialState, action) => {
       return favourite(state, action);
     case FAVOURITE_SUCCESSFUL:
       return favourieSuccessful(state, action);
+    case ERROR_HANDLER:
+      return errorHandler(state, action);
     default:
       return state;
   }

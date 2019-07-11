@@ -49,10 +49,10 @@ export const searchRecipes = query => {
     axios
       .get(`${proxy}https://www.food2fork.com/api/search?key=${key}&q=${query}`)
       .then(res => {
-        console.log(
+        /*console.log(
           `${proxy}https://www.food2fork.com/api/search?key=${key}&q=${query}.json`
         );
-        console.log(res);
+        console.log(res);*/
         dispatch(fetchingFinished(res.data.recipes));
       })
       .catch(error => {
@@ -68,7 +68,7 @@ export const selectRecipe = id => {
     axios
       .get(`${proxy}https://www.food2fork.com/api/get?key=${key}&rId=${id}`)
       .then(res => {
-        console.log(res.data.recipe);
+        // console.log(res.data.recipe);
         dispatch(recipeSelectFinished(res.data.recipe));
       })
       .catch(error => {

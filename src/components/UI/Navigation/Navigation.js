@@ -4,6 +4,7 @@ import { MdHome } from "react-icons/md";
 import { IoIosLogIn, IoIosLogOut, IoIosHeart } from "react-icons/io";
 
 import { setRoute } from "../../../store/actions/authActions";
+
 import classes from "./Navigation.module.css";
 import NavigationItem from "./NavigationItem/NavigationItem";
 import SearchBar from "../../../containers/SearchBar/SearchBar";

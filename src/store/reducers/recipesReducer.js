@@ -6,6 +6,7 @@ import {
   RECIPE_SELECT_FINISHED,
   UPLOAD_SAVED_RECIPE
 } from "../actions/actionTypes";
+import { ERROR_HANDLER } from "../actions/actionTypes";
 import { updateObject } from "../../shared/utility";
 
 const initialState = {
@@ -42,6 +43,9 @@ const recipeSelectFinished = (state, action) =>
 const updateSavedRecipe = (state, action) =>
   updateObject(state, { selectedRecipe: action.recipe });
 
+const errorHandler = (state, action) =>
+  updateObject(state, { error: null, loadingOne: false });
+
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCHING_START:
@@ -56,6 +60,8 @@ const reducer = (state = initialState, action) => {
       return recipeSelectFinished(state, action);
     case UPLOAD_SAVED_RECIPE:
       return updateSavedRecipe(state, action);
+    case ERROR_HANDLER:
+      return errorHandler(state, action);
     default:
       return state;
   }

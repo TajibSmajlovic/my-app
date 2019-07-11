@@ -10,7 +10,6 @@ import { Redirect } from "react-router-dom";
 import { IoIosHeart } from "react-icons/io";
 
 import classes from "./RecipeItem.module.css";
-import "./RecipeItem.module.css";
 
 /*{props.userID !== null && props.route === "/" ? (
   <IoIosHeart className={classes.Favourite} onClick={props.click} /> ? (

@@ -1,10 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
 
+import { favourite } from "../../store/actions/favouriteRecipeActions";
+
 import Aux from "../../hoc/Auxiliary/Auxiliary";
 import RecipeItem from "../../components/RecipeItem/RecipeItem";
 import Loader from "../../components/UI/Loader/Loader";
-import { favourite } from "../../store/actions/favouriteRecipeActions";
 
 class Recipe extends React.Component {
   /*state = {
@@ -21,12 +22,14 @@ class Recipe extends React.Component {
     return Math.ceil((ing / 3) * 15);
   };
 
+  // https://stackoverflow.com/questions/34156282/how-do-i-save-json-to-local-text-file
   downloadRecipe = (exportObj, exportName) => {
-    let dataStr =
+    let data =
       "data:text/json;charset=utf-8," +
       encodeURIComponent(JSON.stringify(exportObj));
     let a = document.createElement("a");
-    a.setAttribute("href", dataStr);
+
+    a.setAttribute("href", data);
     a.setAttribute("download", exportName + ".json");
     document.body.appendChild(a); // required for firefox
     a.click();

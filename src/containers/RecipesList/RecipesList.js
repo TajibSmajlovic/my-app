@@ -1,13 +1,13 @@
 import React from "react";
 import { connect } from "react-redux";
 
+import { selectRecipe } from "../../store/actions";
+
 import classes from "./RecipesList.module.css";
 import Aux from "../../hoc/Auxiliary/Auxiliary";
 import RecipeListItem from "../../components/RecipeListItem/RecipeListItem";
 import Message from "../../components/UI/Message/Message";
 import Loader from "../../components/UI/Loader/Loader";
-
-import { selectRecipe } from "../../store/actions";
 
 class Recipes extends React.Component {
   renderRecipes = () => {

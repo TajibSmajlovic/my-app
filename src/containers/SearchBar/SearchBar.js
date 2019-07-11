@@ -1,8 +1,9 @@
 import React from "react";
+import { connect } from "react-redux";
+
+import { searchRecipes, uploadSavedRecipe } from "../../store/actions";
 
 import classes from "./SearchBar.module.css";
-import { connect } from "react-redux";
-import { searchRecipes, uploadSavedRecipe } from "../../store/actions";
 
 class SearchBar extends React.Component {
   state = {
@@ -13,14 +14,15 @@ class SearchBar extends React.Component {
     this.setState({ [event.target.name]: event.target.value });
   };
 
-  searchRecipe = () => {
+  searchRecipe = e => {
     const { input } = this.state;
 
     this.props.searchRecipes(input);
     this.setState({ input: "" });
   };
 
-  onChange = e => {
+  // https://stackoverflow.com/questions/51026420/filereader-readastext-async-issues
+  upload = e => {
     e.preventDefault();
     const reader = new FileReader();
     reader.onload = async e => {
@@ -56,7 +58,7 @@ class SearchBar extends React.Component {
           {/*<input type="file" name="file" onChange={e => this.onChange(e)} />*/}
           <button type="button" className={classes.BtnRight}>
             <span>Upload</span>
-            <input type="file" onChange={e => this.onChange(e)} />
+            <input type="file" onChange={e => this.upload(e)} />
           </button>
         </form>
       </div>

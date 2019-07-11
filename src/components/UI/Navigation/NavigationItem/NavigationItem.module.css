@@ -14,6 +14,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: rgba(0,0,0,.2);
+}
+.NavigationItem a:hover {
+    background-color: rgba(0,0,0,.4);
 }
 
 .NavigationItem svg {
@@ -30,6 +34,7 @@
 .NavigationItem a.active {
     border-bottom: 4px solid white;
     color: white;
+    background-color: rgba(0,0,0,.4);
 }
 
 

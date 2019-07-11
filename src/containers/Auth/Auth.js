@@ -1,10 +1,10 @@
 import React from "react";
 import { connect } from "react-redux";
-import { withRouter, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
+
+import { auth } from "../../store/actions/authActions";
 
 import classes from "./Auth.module.css";
-import "./Auth.module.css";
-import { auth } from "../../store/actions/authActions";
 
 class Auth extends React.Component {
   state = {
@@ -74,9 +74,7 @@ const mapStateToProps = state => {
   };
 };
 
-export default withRouter(
-  connect(
-    mapStateToProps,
-    { auth }
-  )(Auth)
-);
+export default connect(
+  mapStateToProps,
+  { auth }
+)(Auth);

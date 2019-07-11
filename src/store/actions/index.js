@@ -1,3 +1,5 @@
+import { ERROR_HANDLER } from "./actionTypes";
+
 export {
   searchRecipes,
   selectRecipe,
@@ -5,4 +7,11 @@ export {
 } from "./recipesActions";
 //export { searchRecipes, selectRecipe } from "./recipesActions";
 
-export { fetchFavourites } from "./favouriteRecipeActions";
+export { fetchFavourites, favourite } from "./favouriteRecipeActions";
+export { auth, authCheckState } from "./authActions";
+
+export const errorHandler = () => {
+  return {
+    type: ERROR_HANDLER
+  };
+};

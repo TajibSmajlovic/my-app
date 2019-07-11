@@ -1,13 +1,12 @@
 import React from "react";
 import { connect } from "react-redux";
 
+import { selectRecipe, fetchFavourites } from "../../store/actions";
+
 import classes from "./Favourites.module.css";
 import Aux from "../../hoc/Auxiliary/Auxiliary";
 import RecipeListItem from "../../components/RecipeListItem/RecipeListItem";
-import Message from "../../components/UI/Message/Message";
 import Loader from "../../components/UI/Loader/Loader";
-
-import { selectRecipe, fetchFavourites } from "../../store/actions";
 import RecipeItem from "../../components/RecipeItem/RecipeItem";
 
 class Favourites extends React.Component {

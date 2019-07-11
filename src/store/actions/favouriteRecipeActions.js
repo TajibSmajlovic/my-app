@@ -1,13 +1,11 @@
 import axios from "axios";
-import firebase from "../../shared/firebase";
 
 import {
   FAVOURITE_SUCCESSFUL,
-  FAVOURITE_ERROR,
   FAVOURITE_FINISH,
   FAVOURITE_START
 } from "./actionTypes";
-
+import firebase from "../../shared/firebase";
 import { db } from "../../shared/utility";
 
 const favouriteStart = () => {
@@ -34,7 +32,7 @@ export const favourite = (recipe, userId) => {
     axios
       .post(`${db}/${userId}/favourites.json`, recipe)
       .then(res => {
-        console.log("succes");
+        // console.log("success");
       })
       .catch(err => {
         console.log(err);

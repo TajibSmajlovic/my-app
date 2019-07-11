@@ -1,3 +1,5 @@
+import axios from "axios";
+
 import {
   AUTH_START,
   AUTH_FAIL,
@@ -5,18 +7,15 @@ import {
   AUTH_LOGOUT,
   SET_ROUTE
 } from "./actionTypes";
-
-import axios from "axios";
-
 import { apiKey } from "../../shared/utility";
 
-export const authStart = () => {
+const authStart = () => {
   return {
     type: AUTH_START
   };
 };
 
-export const authSuccess = (token, userId) => {
+const authSuccess = (token, userId) => {
   return {
     type: AUTH_SUCCESS,
     token: token,
@@ -24,7 +23,7 @@ export const authSuccess = (token, userId) => {
   };
 };
 
-export const authFail = error => {
+const authFail = error => {
   return {
     type: AUTH_FAIL,
     error: error
@@ -47,7 +46,7 @@ export const setRoute = route => {
   };
 };
 
-export const checkAuthTimeout = expirationTime => {
+const checkAuthTimeout = expirationTime => {
   return dispatch => {
     setTimeout(() => {
       dispatch(logOut());
@@ -82,7 +81,7 @@ export const auth = (email, password, isSignup) => {
         dispatch(setRoute("/"));
       })
       .catch(err => {
-        dispatch(authFail(err.response.data.error));
+        dispatch(authFail(err.response.data.error.message));
       });
   };
 };
@@ -94,6 +93,7 @@ export const authCheckState = () => {
       dispatch(logOut());
     } else {
       const expirationTime = new Date(localStorage.getItem("expirationDate"));
+      // console.log(expirationTime.getTime());
       if (expirationTime <= new Date()) {
         dispatch(logOut());
       } else {
